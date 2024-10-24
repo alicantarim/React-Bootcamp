@@ -2,7 +2,7 @@ import Button from "./components/Button";
 import Text from "./components/Text";
 
 function App() {
-  //props ... Veri aktarma.
+  //props ... Veri aktarma. For example ===> number = "1"
   return (
     <>
       <Text number="1" name={"React"} />
