@@ -1,5 +1,5 @@
 const Text = ({ number, name }) => {
-  console.log(number, "number");
+  console.log(number, "numberString");
   return (
     <div>
       {name} {number}
