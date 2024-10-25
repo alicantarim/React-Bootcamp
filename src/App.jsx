@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import Button from "./components/Button";
 import Text from "./components/Text";
 
@@ -6,7 +7,7 @@ function App() {
   // ! useState, onClick ve onChange Yapıları..
   //let name = "react"
 
-  const [name, setName] = useState("react"); // Hook.... useState("Burası: null verilebilir. Obje olarak verilebilir.")
+  const [name, setName] = useState("react"); // ? Hook.... useState("Burası: null verilebilir. Obje olarak verilebilir.")
   // const [degisken, degiskeni setlemek istediğin fonksiyon]
 
   const clickFunc = () => {
@@ -50,6 +51,19 @@ function App() {
 
   console.log(data1, "dataArrayString");
 
+  // ! useEffect => Sayfa yüklendiği anda gerçekleşmesi istenilen olayları içine yazarak düzenleme yapılabiliyor. Dışarıdan aldığı parametrelerle
+  // ! bağlı olarak kendini sürekli güncelleyen bir yapıdır.
+  // ? Hiç bir button a, click özelliğine yada input'un handleChange özelliğine bağlı değil.
+  // TODO: Örn: Back-End den bir ürün API si üzerinden istekte bulunursan, Sayfa yüklendiği anda tüm verileri çek ekranda göster diyebiliriz.
+
+  const [name2, setName2] = useState("UseEffect");
+
+  useEffect(() => {
+    setTimeout(() => {
+      setName2("React UseEffect ile güncellendi.");
+    }, 4000);
+  }, []);
+
   //props ... Veri aktarma. For example ===> number = "1"
   return (
     <>
@@ -83,6 +97,9 @@ function App() {
           <div key={i}> {dt} </div>
         ))}
       </div>
+      <br />
+      <br />
+      {name2}
     </>
   );
 }
